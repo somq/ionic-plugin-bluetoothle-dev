@@ -10,102 +10,51 @@ Ionic Native plugin wrapper for cordova-plugin-bluetoothle
 ## Table of Contents
 
 * [Install](#install)
-* [Usage](#usage)
+* [Install & usage](#install-&-usage)
 * [Development](#development)
 * [Versions](#versions)
 * [License](#license)
 
 
-## Install
+## Install & usage
 
-[npm](https://www.npmjs.com/):
-
-```sh
-npm install ionic-plugin-bluetoothle && npm run build
-```
-
-[yarn](https://yarnpkg.com/):
-
-```sh
-yarn add ionic-plugin-bluetoothle && npm run build
-```
-
-
-## Usage
-
-app.module.ts
-```js
-
-import { BluetoothLE } from '@ionic-native/bluetooth-le';
-
-@NgModule({
-  ...
-  providers: [
-    ...
-    BluetoothLE
-  ]
-})
-
-```
-
-home.ts
-```js
-
-import { BluetoothLE } from '@ionic-native/bluetooth-le';
-
-@Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
-})
-export class HomePage {
-
-  constructor(public bluetoothle: BluetoothLE) {
-
-    bluetoothle.initialize().then(ble => {
-      console.log('ble', ble.status) // logs 'enabled'
-    });
-
-  }
-
-
-```
-
-Informations about methods can be found on the original plugin repository: 
-[randdusing/cordova-plugin-bluetoothle
-](https://github.com/randdusing/cordova-plugin-bluetoothle/blob/master/readme.md)
-
----
-
-A full working example can be found in ./example:
-
-```sh
-git clone repo
-cd example
-todo
-```
+This repository is used for development, head to [this repository](https://github.com/somq/ionic-plugin-bluetoothle#install) for installation instructions.
 
 ## Development
 ```sh
-git clone `repo`
-cd `repo`
+git clone https://github.com/somq/ionic-plugin-bluetoothle-dev
+ionic-plugin-bluetoothle-dev
+npm i
 ```
 
-* Plugin wrapper can be found at:
-``sh
+edit plugin file ``
  ./src/@ionic-native/plugins/bluetooth-le/index.ts
  ``
+
+```sh
+npm run dist
+cp -r dist/@ionic-native/plugin-name ../my-app/node_modules/@ionic-native/
+```
+Explanation: see ionic native doc: [#Testing your changes]
+(https://github.com/ionic-team/ionic-native/blob/master/DEVELOPER.md#testing-your-changes)
 
 * Developer guide can be found on the official [Ionic Native documentation](https://github.com/ionic-team/ionic-native/blob/master/DEVELOPER.md)
 
 ## Original doc
 
-You can find the doc on the original plugin repository: 
+You can find the full cordova plugin doc on the original plugin repository: 
 [randdusing/cordova-plugin-bluetoothle
 ](https://github.com/randdusing/cordova-plugin-bluetoothle/blob/master/readme.md)
 
 ## Versions
-Ionic Native version: "4.5.1",
+
+Known versions @ this development stage:
+
+* Ionic version: "4.5.1"
+* Ionic Native version: "3.9.2"
+* cordova-plugin-bluetoothle: "4.4.3"
+
 
 ## License
 
-todo
+MIT
