@@ -1,7 +1,6 @@
 .DS_Store
+node_modules/
 .idea
 .tmp
 aot/
-node_modules/
 scripts/ionic-native-bower
-dist/
