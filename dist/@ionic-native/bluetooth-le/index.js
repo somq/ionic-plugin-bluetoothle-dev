@@ -53,46 +53,55 @@ var BluetoothLE = (function (_super) {
     BluetoothLE.prototype.enable = function () {
         return;
     };
+    BluetoothLE.prototype.disable = function () {
+        return;
+    };
     BluetoothLE.prototype.getAdapterInfo = function () {
-        return;
-    };
-    BluetoothLE.prototype.retrieveConnected = function (params) {
-        return;
-    };
-    BluetoothLE.prototype.isEnabled = function () {
-        return;
-    };
-    BluetoothLE.prototype.requestPermission = function () {
-        return;
-    };
-    BluetoothLE.prototype.requestLocation = function () {
-        return;
-    };
-    BluetoothLE.prototype.isLocationEnabled = function () {
         return;
     };
     BluetoothLE.prototype.startScan = function (params) {
         return;
     };
-    BluetoothLE.prototype.hasPermission = function () {
+    BluetoothLE.prototype.stopScan = function () {
         return;
     };
+    BluetoothLE.prototype.retrieveConnected = function (params) {
+        return;
+    };
+    /**
+     * bond
+     */
+    /**
+     * unbond
+     */
+    BluetoothLE.prototype.connect = function (params) {
+        return;
+    };
+    /**
+     * reconnect
+     */
     BluetoothLE.prototype.disconnect = function (params) {
         return;
     };
     /**
-     * Note, no callback will occur on write without response on iOS.
+     * close
      */
-    BluetoothLE.prototype.write = function (params) {
-        return;
-    };
-    BluetoothLE.prototype.read = function (params) {
-        return;
-    };
-    BluetoothLE.prototype.connect = function (params) {
+    BluetoothLE.prototype.close = function (params) {
         return;
     };
     BluetoothLE.prototype.discover = function (params) {
+        return;
+    };
+    /**
+     * services (iOS)
+     */
+    /**
+     * characteristics (iOS)
+     */
+    /**
+     * descriptors
+     */
+    BluetoothLE.prototype.read = function (params) {
         return;
     };
     BluetoothLE.prototype.subscribe = function (params) {
@@ -101,9 +110,105 @@ var BluetoothLE = (function (_super) {
     BluetoothLE.prototype.unsubscribe = function (params) {
         return;
     };
-    BluetoothLE.prototype.stopScan = function () {
+    /**
+     * Note, no callback will occur on write without response on iOS.
+     */
+    BluetoothLE.prototype.write = function (params) {
         return;
     };
+    /**
+     * writeQ
+     */
+    BluetoothLE.prototype.writeQ = function (params) {
+        return;
+    };
+    /**
+     * readDescriptor
+     */
+    /**
+     * writeDescriptor
+     */
+    /**
+     * rssi
+     */
+    /**
+     * mtu (Android 5+)
+     */
+    /**
+     * requestConnectionPriority (Android 5+)
+     */
+    /**
+     * isInitialized
+     */
+    BluetoothLE.prototype.isInitialized = function () {
+        return;
+    };
+    BluetoothLE.prototype.isEnabled = function () {
+        return;
+    };
+    /**
+     * isScanning
+     */
+    BluetoothLE.prototype.isScanning = function () {
+        return;
+    };
+    /**
+     * isBonded (Android)
+     */
+    /**
+     * wasConnected
+     */
+    /**
+     * isConnected
+     */
+    /**
+     * isDiscovered
+     */
+    BluetoothLE.prototype.hasPermission = function () {
+        return;
+    };
+    BluetoothLE.prototype.requestPermission = function () {
+        return;
+    };
+    BluetoothLE.prototype.isLocationEnabled = function () {
+        return;
+    };
+    BluetoothLE.prototype.requestLocation = function () {
+        return;
+    };
+    /**
+     * initializePeripheral @todo
+     */
+    BluetoothLE.prototype.initializePeripheral = function (params) {
+        return;
+    };
+    /**
+     * addService @todo
+     */
+    BluetoothLE.prototype.addService = function (params) {
+        return;
+    };
+    /**
+     * removeService
+     */
+    /**
+     * removeAllServices
+     */
+    /**
+     * startAdvertising @todo
+     */
+    BluetoothLE.prototype.startAdvertising = function (params) {
+        return;
+    };
+    /**
+     * stopAdvertising
+     */
+    /**
+     * respond
+     */
+    /**
+     * notify
+     */
     BluetoothLE.prototype.bytesToEncodedString = function (bytes) {
         return;
     };
@@ -128,41 +233,17 @@ var BluetoothLE = (function (_super) {
         __metadata("design:returntype", void 0)
     ], BluetoothLE.prototype, "enable", null);
     __decorate([
+        Cordova({ callbackOrder: 'reverse', sync: true }),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], BluetoothLE.prototype, "disable", null);
+    __decorate([
         Cordova({ callbackOrder: 'reverse' }),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", Promise)
     ], BluetoothLE.prototype, "getAdapterInfo", null);
-    __decorate([
-        Cordova({ callbackOrder: 'reverse' }),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", Promise)
-    ], BluetoothLE.prototype, "retrieveConnected", null);
-    __decorate([
-        Cordova({ callbackOrder: 'reverse' }),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", []),
-        __metadata("design:returntype", Promise)
-    ], BluetoothLE.prototype, "isEnabled", null);
-    __decorate([
-        Cordova({ callbackOrder: 'reverse' }),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", []),
-        __metadata("design:returntype", Promise)
-    ], BluetoothLE.prototype, "requestPermission", null);
-    __decorate([
-        Cordova({ callbackOrder: 'reverse' }),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", []),
-        __metadata("design:returntype", Promise)
-    ], BluetoothLE.prototype, "requestLocation", null);
-    __decorate([
-        Cordova({ callbackOrder: 'reverse' }),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", []),
-        __metadata("design:returntype", Promise)
-    ], BluetoothLE.prototype, "isLocationEnabled", null);
     __decorate([
         Cordova({ callbackOrder: 'reverse', observable: true }),
         __metadata("design:type", Function),
@@ -174,25 +255,13 @@ var BluetoothLE = (function (_super) {
         __metadata("design:type", Function),
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", Promise)
-    ], BluetoothLE.prototype, "hasPermission", null);
+    ], BluetoothLE.prototype, "stopScan", null);
     __decorate([
         Cordova({ callbackOrder: 'reverse' }),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Object]),
         __metadata("design:returntype", Promise)
-    ], BluetoothLE.prototype, "disconnect", null);
-    __decorate([
-        Cordova({ callbackOrder: 'reverse' }),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", Object)
-    ], BluetoothLE.prototype, "write", null);
-    __decorate([
-        Cordova({ callbackOrder: 'reverse' }),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", Promise)
-    ], BluetoothLE.prototype, "read", null);
+    ], BluetoothLE.prototype, "retrieveConnected", null);
     __decorate([
         Cordova({ callbackOrder: 'reverse', observable: true }),
         __metadata("design:type", Function),
@@ -204,7 +273,25 @@ var BluetoothLE = (function (_super) {
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Object]),
         __metadata("design:returntype", Promise)
+    ], BluetoothLE.prototype, "disconnect", null);
+    __decorate([
+        Cordova({ callbackOrder: 'reverse' }),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], BluetoothLE.prototype, "close", null);
+    __decorate([
+        Cordova({ callbackOrder: 'reverse' }),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
     ], BluetoothLE.prototype, "discover", null);
+    __decorate([
+        Cordova({ callbackOrder: 'reverse' }),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], BluetoothLE.prototype, "read", null);
     __decorate([
         Cordova({ callbackOrder: 'reverse', observable: true }),
         __metadata("design:type", Function),
@@ -220,9 +307,87 @@ var BluetoothLE = (function (_super) {
     __decorate([
         Cordova({ callbackOrder: 'reverse' }),
         __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Object)
+    ], BluetoothLE.prototype, "write", null);
+    __decorate([
+        Cordova({ callbackOrder: 'reverse' }),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Object)
+    ], BluetoothLE.prototype, "writeQ", null);
+    __decorate([
+        Cordova({ callbackOrder: 'reverse' }),
+        __metadata("design:type", Function),
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", Promise)
-    ], BluetoothLE.prototype, "stopScan", null);
+    ], BluetoothLE.prototype, "isInitialized", null);
+    __decorate([
+        Cordova({ callbackOrder: 'reverse' }),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", Promise)
+    ], BluetoothLE.prototype, "isEnabled", null);
+    __decorate([
+        Cordova({ callbackOrder: 'reverse' }),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", Promise)
+    ], BluetoothLE.prototype, "isScanning", null);
+    __decorate([
+        Cordova({ callbackOrder: 'reverse' }),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", Promise)
+    ], BluetoothLE.prototype, "hasPermission", null);
+    __decorate([
+        Cordova({ callbackOrder: 'reverse' }),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", Promise)
+    ], BluetoothLE.prototype, "requestPermission", null);
+    __decorate([
+        Cordova({ callbackOrder: 'reverse' }),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", Promise)
+    ], BluetoothLE.prototype, "isLocationEnabled", null);
+    __decorate([
+        Cordova({ callbackOrder: 'reverse' }),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", Promise)
+    ], BluetoothLE.prototype, "requestLocation", null);
+    __decorate([
+        Cordova({ callbackOrder: 'reverse' }),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], BluetoothLE.prototype, "initializePeripheral", null);
+    __decorate([
+        Cordova({ callbackOrder: 'reverse' }),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], BluetoothLE.prototype, "addService", null);
+    __decorate([
+        Cordova({ callbackOrder: 'reverse' }),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], BluetoothLE.prototype, "startAdvertising", null);
+    __decorate([
+        Cordova({ sync: true }),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Uint8Array]),
+        __metadata("design:returntype", String)
+    ], BluetoothLE.prototype, "bytesToEncodedString", null);
+    __decorate([
+        Cordova({ sync: true }),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [String]),
+        __metadata("design:returntype", Uint8Array)
+    ], BluetoothLE.prototype, "encodedStringToBytes", null);
     __decorate([
         CordovaProperty,
         __metadata("design:type", Number)
@@ -271,18 +436,6 @@ var BluetoothLE = (function (_super) {
         CordovaProperty,
         __metadata("design:type", Number)
     ], BluetoothLE.prototype, "CALLBACK_TYPE_MATCH_LOST", void 0);
-    __decorate([
-        Cordova({ sync: true }),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Uint8Array]),
-        __metadata("design:returntype", String)
-    ], BluetoothLE.prototype, "bytesToEncodedString", null);
-    __decorate([
-        Cordova({ sync: true }),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [String]),
-        __metadata("design:returntype", Uint8Array)
-    ], BluetoothLE.prototype, "encodedStringToBytes", null);
     BluetoothLE = __decorate([
         Plugin({
             pluginName: 'BluetoothLE',
