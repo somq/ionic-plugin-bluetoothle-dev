@@ -71,15 +71,24 @@ var BluetoothLE = (function (_super) {
     /**
      * bond
      */
+    BluetoothLE.prototype.bond = function (params) {
+        return;
+    };
     /**
      * unbond
      */
+    BluetoothLE.prototype.unbond = function (params) {
+        return;
+    };
     BluetoothLE.prototype.connect = function (params) {
         return;
     };
     /**
      * reconnect
      */
+    BluetoothLE.prototype.reconnect = function (params) {
+        return;
+    };
     BluetoothLE.prototype.disconnect = function (params) {
         return;
     };
@@ -267,7 +276,25 @@ var BluetoothLE = (function (_super) {
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [Object]),
         __metadata("design:returntype", Observable)
+    ], BluetoothLE.prototype, "bond", null);
+    __decorate([
+        Cordova({ callbackOrder: 'reverse' }),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], BluetoothLE.prototype, "unbond", null);
+    __decorate([
+        Cordova({ callbackOrder: 'reverse', observable: true }),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Observable)
     ], BluetoothLE.prototype, "connect", null);
+    __decorate([
+        Cordova({ callbackOrder: 'reverse', observable: true }),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Observable)
+    ], BluetoothLE.prototype, "reconnect", null);
     __decorate([
         Cordova({ callbackOrder: 'reverse' }),
         __metadata("design:type", Function),

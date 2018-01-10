@@ -99,17 +99,33 @@ export class BluetoothLE extends IonicNativePlugin {
   }
 
   @Cordova({callbackOrder: 'reverse'})
-  retrieveConnected (params?: any): Promise<any> {
+  retrieveConnected(params?: any): Promise<any> {
     return;
   }
 
   /**
    * bond
    */
+  @Cordova({callbackOrder: 'reverse', observable: true})
+  bond(params: {address: string, autoConnect?: boolean}): Observable<{
+    name: string,
+    address: string,
+    status: 'bonded' | 'bonding' | 'unbonded'
+  }> {
+    return;
+  }
 
   /**
    * unbond
    */
+  @Cordova({callbackOrder: 'reverse'})
+  unbond(params: {address: string}): Promise<{
+    name: string,
+    address: string,
+    status: 'unbonded'
+  }> {
+    return;
+  }
 
   @Cordova({callbackOrder: 'reverse', observable: true})
   connect(params: {address: string, autoConnect?: boolean}): Observable<{
@@ -123,6 +139,14 @@ export class BluetoothLE extends IonicNativePlugin {
   /**
    * reconnect
    */
+  @Cordova({callbackOrder: 'reverse', observable: true})
+  reconnect(params: {address: string}): Observable<{
+    name: string,
+    address: string,
+    status: 'connected' | 'disconnected'
+  }> {
+    return;
+  }
 
   @Cordova({callbackOrder: 'reverse'})
   disconnect(params: {address: string}): Promise<{

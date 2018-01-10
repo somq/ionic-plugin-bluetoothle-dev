@@ -65,9 +65,24 @@ export declare class BluetoothLE extends IonicNativePlugin {
     /**
      * bond
      */
+    bond(params: {
+        address: string;
+        autoConnect?: boolean;
+    }): Observable<{
+        name: string;
+        address: string;
+        status: 'bonded' | 'bonding' | 'unbonded';
+    }>;
     /**
      * unbond
      */
+    unbond(params: {
+        address: string;
+    }): Promise<{
+        name: string;
+        address: string;
+        status: 'unbonded';
+    }>;
     connect(params: {
         address: string;
         autoConnect?: boolean;
@@ -79,6 +94,13 @@ export declare class BluetoothLE extends IonicNativePlugin {
     /**
      * reconnect
      */
+    reconnect(params: {
+        address: string;
+    }): Observable<{
+        name: string;
+        address: string;
+        status: 'connected' | 'disconnected';
+    }>;
     disconnect(params: {
         address: string;
     }): Promise<{
