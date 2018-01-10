@@ -32,7 +32,7 @@ edit plugin file ``
  ``
 
 ```sh
-npm run dist
+npm run build
 cp -r dist/@ionic-native/plugin-name ../my-app/node_modules/@ionic-native/
 ```
 Explanation: see ionic native doc: [#Testing your changes]
