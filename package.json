@@ -50,6 +50,7 @@
     "start": "npm run test:watch",
     "lint": "gulp lint",
     "build": "npm run clean && npm run lint && npm run build:core && npm run build:modules",
+    "build-ocp": "npm run clean && npm run lint && npm run build:core && npm run build:modules && cp -r dist/@ionic-native/bluetooth-le D:/__DEV__/__MOBILEAPPS__/__Ionic__/Guard-Companion/node_modules/@ionic-native",
     "build:core": "ngc -p scripts/build/tsconfig-core.json",
     "build:modules": "node scripts/build/build.js",
     "clean": "rimraf dist .tmp",

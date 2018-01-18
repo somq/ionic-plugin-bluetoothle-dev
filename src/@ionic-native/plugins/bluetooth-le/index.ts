@@ -10,6 +10,23 @@ export interface ICharacteristicPath {
   characteristic: string;
 }
 
+export interface Params {
+  /** The address/identifier provided by the scan's return object */
+  address: string;
+  /** The service's ID */
+  service: string;
+}
+export interface DescriptorParams extends Params {
+  /** The characteristic's ID */
+  characteristic: string;
+}
+export interface WriteCharacteristicParams extends DescriptorParams {
+  /* Base64 encoded string */
+  value: string;
+  /* Set to "noResponse" to enable write without response, all other values will write normally. */
+  type?: string;
+}
+
 /**
  * @name Bluetooth L E
  * @description
@@ -203,7 +220,7 @@ export class BluetoothLE extends IonicNativePlugin {
   }
 
   @Cordova({callbackOrder: 'reverse', observable: true})
-  subscribe(params: ICharacteristicPath): Observable<{status: 'subscribed' | 'subscribedResult', value: string}> {
+  subscribe(params: ICharacteristicPath): Observable<{status: 'subscribed' | 'subscribedResult', value: string} & ICharacteristicPath> {
     return;
   }
 
@@ -216,12 +233,16 @@ export class BluetoothLE extends IonicNativePlugin {
    * Note, no callback will occur on write without response on iOS.
    */
   @Cordova({callbackOrder: 'reverse'})
-  write(params: ({
-    value: string,
-    type?: 'noResponse'
-  } & ICharacteristicPath)): Promise<any> | void {
+  write(params: WriteCharacteristicParams): Promise<any> {
     return;
   }
+
+  // write(params: ({
+  //   value: string,
+  //   type?: 'noResponse'
+  // } & ICharacteristicPath)): Promise<any> | void {
+  //   return;
+  // }
 
   /**
    * writeQ
